@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.dao.GerenjianliDao">
+
+	<!-- 可根据自己的需求，是否要使用 -->
+    <resultMap type="com.entity.GerenjianliEntity" id="gerenjianliMap">
+        <result property="qiuzhizhanghao" column="qiuzhizhanghao"/>
+        <result property="qiuzhixingming" column="qiuzhixingming"/>
+        <result property="xueli" column="xueli"/>
+        <result property="nianling" column="nianling"/>
+        <result property="xingbie" column="xingbie"/>
+        <result property="shoujihao" column="shoujihao"/>
+        <result property="dianziyouxiang" column="dianziyouxiang"/>
+        <result property="jianlifujian" column="jianlifujian"/>
+        <result property="qiwangxinzi" column="qiwangxinzi"/>
+        <result property="zhiweileixing" column="zhiweileixing"/>
+        <result property="suozaididian" column="suozaididian"/>
+        <result property="biyeyuanxiao" column="biyeyuanxiao"/>
+        <result property="ziwojieshao" column="ziwojieshao"/>
+        <result property="youshijineng" column="youshijineng"/>
+        <result property="touxiang" column="touxiang"/>
+        <result property="clicktime" column="clicktime"/>
+        <result property="clicknum" column="clicknum"/>
+        <result property="storeupnum" column="storeupnum"/>
+    </resultMap>
+
+	<select id="selectListVO"
+		resultType="com.entity.vo.GerenjianliVO" >
+		SELECT * FROM gerenjianli  gerenjianli         
+        <where> 1=1 ${ew.sqlSegment}</where>
+	</select>
+	
+	<select id="selectVO"
+		resultType="com.entity.vo.GerenjianliVO" >
+		SELECT  gerenjianli.* FROM gerenjianli  gerenjianli 	
+ 		<where> 1=1 ${ew.sqlSegment}</where>
+	</select>
+
+    <select id="selectListView"
+		resultType="com.entity.view.GerenjianliView" >
+
+		SELECT  gerenjianli.* FROM gerenjianli  gerenjianli 	        
+        <where> 1=1 ${ew.sqlSegment}</where>
+	</select>
+	
+	<select id="selectView"
+		resultType="com.entity.view.GerenjianliView" >
+		SELECT * FROM gerenjianli  gerenjianli <where> 1=1 ${ew.sqlSegment}</where>
+	</select>
+	
+
+
+</mapper>
